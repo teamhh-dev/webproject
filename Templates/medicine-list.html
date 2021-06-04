@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Medicine List</title>
+</head>
+
+<body>
+    <div class="sure" id="sure">
+        <h1 class="msg">Are you sure you want to delete!</h1>
+        <button>Yes</button><button>No</button></div>
+
+    <div class="container">
+
+        <div class="title">
+            <h3 class="title-text">Medicine List</h3>
+            <div class="btns">
+                <a href="/add-medicine"><button class="medicine-list-btn">Add Medicine</button></a></div>
+        </div>
+        <div class="table">
+            <table>
+                <tr>
+                    <!-- <th>sr</th> -->
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Unit
+                    </th>
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Manufacturer
+                    </th>
+                    <th>
+                        Manufacturer Price
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>Action</th>
+                </tr>
+                {% for medicine in medicines %}
+                <tr id="{{medicine[ 'id']}}">
+                    <!-- <td>{{medicine}}</td> -->
+                    <td>{{medicine['name']}}</td>
+                    <td>{{medicine['category']}}</td>
+                    <td>{{medicine['unit']}}</td>
+                    <td>{{medicine['details']}}</td>
+                    <td>{{medicine['price']}}</td>
+                    <td>{{medicine['manufacturer_name']}}</td>
+                    <td>{{medicine['manufacturer_price']}}</td>
+                    <td><img src="{{ url_for('static', filename=medicine['image']) }}" class="medicine-image" alt="No Image!"></td>
+                    <!-- <td><img class="medicine-image" src="{{ url_for('static', filename='6.jpg') }}" alt="No Image!" srcset=""></td> -->
+                    <td><button class="btn" onclick="deleteMedicine(this.parentNode.parentNode.id)"><i class="fa fa-trash fa-2x" ></i><button class="btn" onclick="updateMedicine(this.parentNode.parentNode.id)"><i class="fa fa-edit fa-2x" ></i></button>
+                    </td>
+                </tr> {% endfor %}
+
+            </table>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='medicine-list.js') }}"></script>
+</body>
+
+</html>

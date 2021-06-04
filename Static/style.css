@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 2rem;
+    /* background-color: rgb(206, 206, 206); */
+    position: relative;
+    border-radius: 5px;
+    width: 80%;
+    height: fit-content;
+    float: right;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    height: 13vh;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px groove rgb(245, 245, 245);
+    /* border-style: groove; */
+}
+
+.btns {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.upload-csv-btn,
+.medicine-list-btn {
+    color: white;
+    border-style: none;
+    background-color: #106b67;
+    padding: 0.5rem;
+    margin-right: 0.3rem;
+}
+
+.upload-csv-btn:hover,
+.medicine-list-btn:hover {
+    transition: 0.1s linear;
+    font-size: larger;
+}
+
+h3 {
+    text-decoration: none;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    position: relative;
+    left: 10%;
+}
+
+.table {
+    overflow-x: scroll;
+}
+
+.table table {
+    position: relative;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem;
+}
+
+.table th {
+    border: 1px solid black;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.medicine-image {
+    position: relative;
+    height: 3rem;
+    width: 4rem;
+    /* padding: auto; */
+    object-fit: cover;
+}
+
+.btn {
+    background: none;
+    border: none;
+    padding: 1rem;
+}
+
+.sure {
+    position: fixed;
+    background-color: grey;
+    z-index: 10;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 30vh;
+    transform: translate(-50%, -50%);
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+}
+
+.btn:hover {
+    color: red;
+}
+
+tr:nth-child(even) {
+    background-color: #d4d4d4;
+}
+
+@media screen and (max-width: 768px) {
+    /* th,
+    td {
+        display: none;
+    }
+    th:nth-child(1),
+    td:nth-child(1) {
+        display: block;
+        visibility: visible;
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 0.5rem;
+    }
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: block;
+        visibility: visible;
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 0.5rem;
+    }
+    th:nth-child(5),
+    td:nth-child(5) {
+        display: block;
+        visibility: visible;
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 0.5rem;
+    } */
+    .title-text {
+        margin-left: 1rem;
+    }
+    /* table {
+        position: relative;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        /* margin: 1rem; */
+}
